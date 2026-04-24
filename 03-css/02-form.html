@@ -9,10 +9,54 @@
   </head>
   <body>
     <main>
-      <!-- Start with the code from the HTML folder.
-      - Make sure to fix any issues in your HTML code.
-      - Delete all mentions of <br>s and style the line breaks with CSS. 
-      - Add classes to style the elements on the page. -->
+      <h1>Roth IRA Calculator</h1>
+        <form action="/submitform">
+          <div>
+            <label for="balance">Balance ($)</label><br />
+              <input type="text" name="balance" id="balance" />
+          </div>
+          <br />
+          <div>
+            <label for="annual">Annual Contribution ($)</label><br />
+            <input type="text" name="annual" id="annual" />
+          </div>
+            <br />
+            <fieldset>
+              <legend>Maximize contributions?</legend>
+              <input type="radio" name="maximize" id="yes" />
+              <label for="yes">Yes</label>
+                <input type="radio" name="maximize" id="no" />
+                <label for="no">No</label>
+              </fieldset>
+              <br />
+              <div>
+                <label for="rate">Expected Rate of Return (%)</label><br />
+                <input type="number" name="rate" id="rate" />
+              </div>
+              <br />
+              <div>
+                <label for="current">Current Age</label><br />
+                <input type="number" name="current" id="current" />
+              </div>
+              <br />
+              <div>
+                <label for="retire">Retriement Age</label><br />
+                <input type="number" name="reitre" id="retire" />
+              </div>
+              <br />
+              <div>
+                <label for="tax">Marginal tax rate (%)</label><br />
+                <input type="number" name="tax" id="current" />
+              </div>
+              <br />
+              <div>
+                <input type="submit" value="Calculate" />
+                <input type="reset" value="Reset" />
+              </div>
+            </form>
+          </main>
+        </body>
+      </html>
     </main>
   </body>
 </html>
