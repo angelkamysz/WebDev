@@ -14,18 +14,21 @@ const server = http.createServer((req, res) => {
   // form route
   else if (req.method === 'GET' && req.url === '') {
     // fill out this route
+    file.serveFile('/form.html', 200, {}, req, res);
   }
   // form submission
-  else if (req.method === 'POST' && req.url === '') {
+  else if (req.method === 'POST' && req.url === '/formExerciseSubmit') {
     let body = '';
 
     req.on('data', (chunk) => {
       body += chunk;
+      //console.log(body);
     });
 
     req.on('end', () => {
       const userdata = querystring.parse(body);
-      const { usernameInput: name, emailInput: email } = userdata;
+      //console.log(userdata);
+      const { nameInput: name, emailInput: email } = userdata;
 
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.write(`<p>Thank you for submitting your information: </p>`);
